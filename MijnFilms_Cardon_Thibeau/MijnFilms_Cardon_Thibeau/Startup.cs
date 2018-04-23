@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MijnFilms_Cardon_Thibeau.Controllers;
 
 namespace MijnFilms_Cardon_Thibeau
 {
@@ -22,7 +23,7 @@ namespace MijnFilms_Cardon_Thibeau
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<NorthwindContext>(options=>options.useSqlServer(Configuration.GetConnectionString("NorthwindDatabase"))
+            services.AddDbContext<NorthwindContext>(options => options.useSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
