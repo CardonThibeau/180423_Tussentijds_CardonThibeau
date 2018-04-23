@@ -17,7 +17,9 @@ namespace MijnFilms_Cardon_Thibeau.Controllers
             db = context;
         }
 
-        [Route("List")]
+        [Route("")]
+        [Route("/List")]
+        [Route("/Lijst")]
         public IActionResult List()
         {
             ViewData["Message"] = "List";
@@ -25,6 +27,13 @@ namespace MijnFilms_Cardon_Thibeau.Controllers
         }
 
         [Route("Sort")]
+        [Route("Sorteer")]
+        [Route("Sorteer/title")]
+        [Route("Sorteer/year")]
+        [Route("Sorteer/stars")]
+        //[Route("/Sorteer/title")]
+        //[Route("/Sorteer/year")]
+        //[Route("/Sorteer/stars")]
         public IActionResult Sort()
         {
             ViewData["Message"] = "Sort";
@@ -41,6 +50,8 @@ namespace MijnFilms_Cardon_Thibeau.Controllers
         }
 
         [Route("Find")]
+        [Route("Zoek")]
+        //[Route("/Zoek")]
         public IActionResult Find()
         {
             ViewData["Message"] = "Find";
