@@ -28,8 +28,5 @@ namespace MijnFilms_Cardon_Thibeau.Models
 
         [Required]
         public string Description { get; set; }
-
-
-
     }
 }
