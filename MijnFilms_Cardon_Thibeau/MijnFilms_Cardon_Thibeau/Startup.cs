@@ -22,6 +22,7 @@ namespace MijnFilms_Cardon_Thibeau
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<NorthwindContext>(options=>options.useSqlServer(Configuration.GetConnectionString("NorthwindDatabase"))
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,12 +40,14 @@ namespace MijnFilms_Cardon_Thibeau
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc(
+            //routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //}
+            );
         }
     }
 }

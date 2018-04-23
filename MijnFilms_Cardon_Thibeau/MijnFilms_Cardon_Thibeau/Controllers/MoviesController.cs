@@ -8,23 +8,42 @@ using MijnFilms_Cardon_Thibeau.Models;
 
 namespace MijnFilms_Cardon_Thibeau.Controllers
 {
+    [Route("Movies")]
     public class MoviesController : Controller
     {
-        public IActionResult Index()
+        private NorthwindContext db;
+        public MoviesController(NorthwindContext context)
         {
+            db = context;
+        }
+
+        [Route("List")]
+        public IActionResult List()
+        {
+            ViewData["Message"] = "List";
             return View();
         }
 
-        public IActionResult About()
+        [Route("Sort")]
+        public IActionResult Sort()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Sort";
 
             return View();
         }
 
-        public IActionResult Contact()
+        [Route("Details")]
+        public IActionResult Details()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Details";
+
+            return View();
+        }
+
+        [Route("Find")]
+        public IActionResult Find()
+        {
+            ViewData["Message"] = "Find";
 
             return View();
         }
@@ -33,5 +52,9 @@ namespace MijnFilms_Cardon_Thibeau.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+
+    public class NorthwindContext
+    {
     }
 }
